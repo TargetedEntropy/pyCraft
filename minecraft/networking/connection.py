@@ -33,6 +33,7 @@ class ConnectionContext(object):
 
     def __init__(self, **kwds):
         self.protocol_version = kwds.get("protocol_version")
+       # self.protocol_version = 340
         
     def protocol_earlier(self, other_pv):
         """Returns True if the protocol version of this context was published
@@ -447,6 +448,7 @@ class Connection(object):
             # It is important that this is set correctly even when connecting
             # in status mode, as some servers, e.g. SpigotMC with the
             # ProtocolSupport plugin, use it to determine the correct response.
+            # self.context.protocol_version = 340
             self.context.protocol_version \
                 = max(self.allowed_proto_versions,
                       key=PROTOCOL_VERSION_INDICES.get)

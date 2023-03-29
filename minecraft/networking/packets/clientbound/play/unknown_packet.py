@@ -23,7 +23,7 @@ class UnknownPacket(Packet):
         # return 0x20
         # return 0x16
         # return 0x4E
-        return 0x4C
+        return 0x3F
 
 #      13 --> [unknown packet] 0x3C Packet
 #      19 --> [unknown packet] 0x16 Packet
