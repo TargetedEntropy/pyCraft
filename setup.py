@@ -7,21 +7,13 @@ import os
 
 path = "minecraft/chromedriver_"
 
+print(f"CHECK_SYSTEM: {platform.system()}")
+print(f"CHECK_MACHINE: {platform.machine()}")
 
-if platform.system() == 'Linux' and platform.machine() == 'x86_64':
-    os.system(f"unzip {path}linux64.zip -d minecraft")
-    remove(f"{path}win32.zip")
-    print("Finished webdriver setup")
 
-elif platform.system == 'Windows' and platform.machine == 'i386':
+if platform.system == 'Windows' and platform.machine == 'i386':
     platform.system(f"unzip {path}windows32.zip -d minecraft")
-    remove(f"{path}linux64.zip")
     print("Finished webdriver setup")
-
-else:
-    input("Unsupported system or machine type. Press enter to exit setup...")
-    sys.exit(1)
-
 
 
 def read(filename):
