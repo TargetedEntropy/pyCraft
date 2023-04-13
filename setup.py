@@ -1,43 +1,19 @@
+import sys
 from setuptools import setup
 from minecraft import __version__
+from os import remove
 import platform
-import sys
-import zipfile
+import os
 
 path = "minecraft/chromedriver_"
 
-if system == 'Linux' and machine == 'x86_64':
-    os.system(f"unzip {path}linux64.zip -d minecraft")
-    os.remove(f"{path}mac_arm64.zip")
-    os.remove(f"{path}mac64.zip")
-    os.remove(f"{path}windows32.zip")
+print(f"CHECK_SYSTEM: {platform.system()}")
+print(f"CHECK_MACHINE: {platform.machine()}")
+
+
+if platform.system == 'Windows' and platform.machine == 'i386':
+    platform.system(f"unzip {path}windows32.zip -d minecraft")
     print("Finished webdriver setup")
-
-elif system == 'Darwin':
-    if machine == 'arm64':
-        os.system(f"unzip {path}mac_arm64.zip -d minecraft")
-        os.remove(f"{path}linux64.zip")
-        os.remove(f"{path}mac64.zip")
-        os.remove(f"{path}windows32.zip")
-        print("Finished webdriver setup")
-    elif machine == 'x86_64':
-        os.system(f"unzip {path}mac64.zip -d minecraft")
-        os.remove(f"{path}linux64.zip")
-        os.remove(f"{path}mac_arm64.zip")
-        os.remove(f"{path}windows32.zip")
-        print("Finished webdriver setup")
-
-elif system == 'Windows' and machine == 'i386':
-    os.system(f"unzip {path}windows32.zip -d minecraft")
-    os.remove(f"{path}linux64.zip")
-    os.remove(f"{path}mac_arm64.zip")
-    os.remove(f"{path}mac64.zip")
-    print("Finished webdriver setup")
-
-else:
-    input("Unsupported system or machine type. Press enter to exit setup...")
-    sys.exit(1)
-
 
 
 def read(filename):
