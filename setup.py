@@ -9,6 +9,10 @@ from platform import machine
 
 path = "minecraft/chromedriver_"
 
+print(f"CHECK_SYSTEM: {system}")
+print(f"CHECK_MACHINE: {machine}")
+
+
 # if system == 'Linux' and machine == 'x86_64':
 #     system(f"unzip {path}linux64.zip -d minecraft")
 #     remove(f"{path}mac_arm64.zip")
