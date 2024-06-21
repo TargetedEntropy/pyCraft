@@ -24,6 +24,9 @@ from .face_player_packet import FacePlayerPacket
 from .join_game_and_respawn_packets import JoinGamePacket, RespawnPacket
 from .destroy_entities_packet import DestroyEntitiesPacket
 from .spawn_mob_packet import SpawnMobPacket
+from .chunk_data import ChunkDataPacket
+
+# from .unknown_packet import UnknownPacket
 
 # Formerly known as state_playing_clientbound.
 
@@ -58,7 +61,8 @@ def get_packets(context):
         BlockActionPacket,
         EntityHeadLookPacket,
         ResourcePackSendPacket,
-        NBTQueryPacket
+        NBTQueryPacket,
+        ChunkDataPacket
     }
 
     if context.protocol_earlier_eq(47):
